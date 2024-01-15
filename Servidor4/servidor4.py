@@ -1,10 +1,12 @@
-from flask import Flask
+from flask import Flask, redirect
+
 
 servidor4 = Flask(__name__)
 
 @servidor4.route('/')
 def hola():
-    return "Hola desde servidor 4"
+    return redirect("https://www.google.com/maps", code=302)
+    
 
 if __name__ == '__main__':
     servidor4.run(host='0.0.0.0')
